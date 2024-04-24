@@ -2,7 +2,10 @@
 package com.mycompany.swing;
 
 import java.awt.BorderLayout;
+import java.awt.Event;
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -12,12 +15,18 @@ import javax.swing.border.Border;
 
 public class Swing {
 
+    public static int i = 1;
+    
     public static void main(String[] args) {
         int tamanhoY = 540; int tamanhoX = 540;
         
         JFrame formPrincipal = new JFrame();
         JButton enviarBtn = new JButton("Enviar formulário");
-
+        enviarBtn.addActionListener((ActionEvent e) -> {
+            System.out.println(i);
+            i = i + 1;
+        });
+        
         formPrincipal.setSize(tamanhoX, tamanhoY);
         formPrincipal.add(enviarBtn, BorderLayout.SOUTH);
         
@@ -37,5 +46,7 @@ public class Swing {
         
         formPrincipal.setDefaultCloseOperation(formPrincipal.EXIT_ON_CLOSE);
         formPrincipal.setVisible(true);
+        
+        
     }
 }
