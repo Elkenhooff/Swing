@@ -26,20 +26,16 @@ public class Swing {
         sessaoNome.add(new JLabel("Nome do Usuário"));
         JTextField txtNome = new JTextField(20);
         sessaoNome.add(txtNome);
+        formPrincipal.add(sessaoNome, BorderLayout.NORTH);
         
         JPanel sessaoEmail = new JPanel();
         sessaoEmail.setLayout(new FlowLayout());
         sessaoEmail.add(new JLabel("Email do Usuário"));
         JTextField txtEmail = new JTextField(20);
         sessaoEmail.add(txtEmail);
-        
-        formPrincipal.add(sessaoNome);
-        formPrincipal.add(sessaoEmail);
-        
-        sessaoNome.setVisible(true);
-        sessaoEmail.setVisible(true);
-        formPrincipal.setVisible(true);
+        formPrincipal.add(sessaoEmail, BorderLayout.CENTER);
         
         formPrincipal.setDefaultCloseOperation(formPrincipal.EXIT_ON_CLOSE);
+        formPrincipal.setVisible(true);
     }
 }
